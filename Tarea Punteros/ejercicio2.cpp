@@ -28,7 +28,6 @@ int main()
     *(array + 1) = 15;
     array[2] = 20; 
 
-
     system("pause");
 
     return 0;
