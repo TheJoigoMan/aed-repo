@@ -88,12 +88,16 @@ void printArray(int arr[], int size)
 // Codigo principal
 int main()
 {
+    // Declaracion de variables
+    int n; // Tamaño del array
+    int count = 0; // Cuenta de operaciones
+    char key; // Variable de tecla
+        
     while(true){
-        int n; // Tamaño del array
-        char key; // Variable de tecla
-
+        count++; // Aumentamos la cuenta
         // Solicitamos el valor de n
-        cout << "Ingrese el numero de elementos del array: ";
+        cout << endl << "//////////////////// Operacion #" << count << " //////////////////////" << endl;
+        cout << endl << "Ingrese el numero de elementos del array: ";
         cin >> n;
 
         int *arr = new int[n]; // Array
@@ -104,7 +108,7 @@ int main()
         }
 
         // Mostramos la cantidad de elementos del array
-        cout << "El Array consta de " << n << " elementos." << endl << endl;
+        cout << endl << "El Array consta de " << n << " elementos." << endl;
 
         // Mostramos el array original
         if(n <= 100){
@@ -131,7 +135,7 @@ int main()
             printArray(arr, n); // Mostramos el array resultante
         }
 
-        cout << "Tiempo total de computacion: " << duration.count() << " microsegundos." << endl; // Mostramos la duracion total de computacion
+        cout << "Tiempo total de computacion: " << duration.count() << " microsegundos." << endl << endl; // Mostramos la duracion total de computacion
         
         delete [] arr; // Liberamos memoria
 

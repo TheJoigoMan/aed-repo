@@ -8,67 +8,32 @@ using namespace chrono;
 
 ////////////////////////////// Funciones del Algoritmo Selection Sort /////////////////////////////////////
 
-///////////////// Funcion Merge ///////////////////
-//.         array.    ,     izquierda  ,     mitad    , derecha
-void merge(int array[], int const left, int const mid, int const right)
-{
-    int const subArrayOne = mid - left + 1;
-    int const subArrayTwo = right - mid;
-
-    // Create temp arrays
-    int *leftArray = new int[subArrayOne],
-            *rightArray = new int[subArrayTwo];
-
-    // Copy data to temp arrays leftArray[] and rightArray[]
-    for (int i = 0; i < subArrayOne; i++)
-        leftArray[i] = array[left + i];
-    for (int j = 0; j < subArrayTwo; j++)
-        rightArray[j] = array[mid + 1 + j];
-
-    int indexOfSubArrayOne = 0, // Initial index of first sub-array
-    indexOfSubArrayTwo = 0; // Initial index of second sub-array
-    int indexOfMergedArray = left; // Initial index of merged array
-
-    // Merge the temp arrays back into array[left..right]
-    while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
-        if (leftArray[indexOfSubArrayOne] <= rightArray[indexOfSubArrayTwo]) {
-            array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
-            indexOfSubArrayOne++;
-        }
-        else {
-            array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
-            indexOfSubArrayTwo++;
-        }
-        indexOfMergedArray++;
-    }
-    // Copy the remaining elements of
-    // left[], if there are any
-    while (indexOfSubArrayOne < subArrayOne) {
-        array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
-        indexOfSubArrayOne++;
-        indexOfMergedArray++;
-    }
-    // Copy the remaining elements of
-    // right[], if there are any
-    while (indexOfSubArrayTwo < subArrayTwo) {
-        array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
-        indexOfSubArrayTwo++;
-        indexOfMergedArray++;
-    }
-}
-
-///////////////// Funcion MergeSort ///////////////////
-void mergeSort(int array[], int const begin, int const end)
-{
-    if (begin >= end)
-        return; // Returns recursively
-
-    int mid = begin + (end - begin) / 2;
-    mergeSort(array, begin, mid);
-    mergeSort(array, mid + 1, end);
-    merge(array, begin, mid, end);
-}
-
+///////////////// Funcion Swap ///////////////////
+void swap(int *xp, int *yp) 
+{ 
+    int temp = *xp; 
+    *xp = *yp; 
+    *yp = temp; 
+} 
+  
+///////////////// Funcion selectionSort ///////////////////
+void selectionSort(int arr[], int n) 
+{ 
+    int i, j, min_idx; 
+  
+    // One by one move boundary of unsorted subarray 
+    for (i = 0; i < n-1; i++) 
+    { 
+        // Find the minimum element in unsorted array 
+        min_idx = i; 
+        for (j = i+1; j < n; j++) 
+        if (arr[j] < arr[min_idx]) 
+            min_idx = j; 
+  
+        // Swap the found minimum element with the first element 
+        swap(&arr[min_idx], &arr[i]); 
+    } 
+} 
 
 ////////////////// Funciones de Utilidad y medicion ////////////////////
 
@@ -88,12 +53,16 @@ void printArray(int arr[], int size)
 // Codigo principal
 int main()
 {
+    // Declaracion de variables
+    int n; // Tamaño del array
+    int count = 0; // Cuenta de operaciones
+    char key; // Variable de tecla
+        
     while(true){
-        int n; // Tamaño del array
-        char key; // Variable de tecla
-
+        count++; // Aumentamos la cuenta
         // Solicitamos el valor de n
-        cout << "Ingrese el numero de elementos del array: ";
+        cout << endl << "//////////////////// Operacion #" << count << " //////////////////////" << endl;
+        cout << endl << "Ingrese el numero de elementos del array: ";
         cin >> n;
 
         int *arr = new int[n]; // Array
@@ -104,7 +73,7 @@ int main()
         }
 
         // Mostramos la cantidad de elementos del array
-        cout << "El Array consta de " << n << " elementos." << endl << endl;
+        cout << endl << "El Array consta de " << n << " elementos." << endl;
 
         // Mostramos el array original
         if(n <= 100){
@@ -116,7 +85,7 @@ int main()
         auto start = high_resolution_clock::now();
 
         // Ejecutamos el algoritmo desde 0
-        mergeSort(arr, 0, n - 1);
+        selectionSort(arr, n); 
 
         // Tomamos el tiempo final de computacion
         auto stop = high_resolution_clock::now();
@@ -131,7 +100,7 @@ int main()
             printArray(arr, n); // Mostramos el array resultante
         }
 
-        cout << "Tiempo total de computacion: " << duration.count() << " microsegundos." << endl; // Mostramos la duracion total de computacion
+        cout << "Tiempo total de computacion: " << duration.count() << " microsegundos." << endl << endl; // Mostramos la duracion total de computacion
         
         delete [] arr; // Liberamos memoria
 
@@ -144,7 +113,7 @@ int main()
             } else if(key == 'n'||key == 'N'){
                 return 1;
             } else {
-                cout << "Entrada invalida, pruebe de nuevo." << endl;
+                cout << "Entrada invalida, pruebe de nuevo." << endl << endl;
             }
         }
     }
