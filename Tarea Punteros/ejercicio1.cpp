@@ -17,7 +17,7 @@ int main()
     cout << "Valor de &a (direccion): " << ptr << "\n";
     cout << "Valor de &ptr (direccion): " << &ptr << "\n";
 
-    system("pause");
+    system("pause"); // Pausa
 
     return 0;
 }

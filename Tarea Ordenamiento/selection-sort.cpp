@@ -69,7 +69,7 @@ int main()
 
         // Obtenemos los valores aleatorios para el array
         for(int i=0; i<n; i++){
-            arr[i]=rand()%1000; // Cambiar segun el rango de numeros deseado
+            arr[i]=rand()%100; // Cambiar segun el rango de numeros deseado
         }
 
         // Mostramos la cantidad de elementos del array
