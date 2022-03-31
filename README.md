@@ -1,4 +1,7 @@
-# DEMO
-Nada aquí todavía
+# Repositorio de archivos
+Alumno: Diego Villena
+Curso: Algoritmos y Estructura de datos
 
-## TEST
+## Subido hasta ahora:
+- Tarea Punteros
+- Tarea Ordenamiento
