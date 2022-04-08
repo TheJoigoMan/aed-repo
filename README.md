@@ -5,3 +5,5 @@ Curso: Algoritmos y Estructura de datos
 ## Subido hasta ahora:
 - Tarea Punteros
 - Tarea Ordenamiento
+- Ejercicios Listas
+- Ejercicios Iteradores
