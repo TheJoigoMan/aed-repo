@@ -3,7 +3,12 @@ Alumno: Diego Villena
 Curso: Algoritmos y Estructura de datos
 
 ## Subido hasta ahora:
-- Tarea Punteros
+- Btree
+- ChainHash
+- Ejercicio Forward-Doubly Lists
+- Ejercicio Iteradores
+- Ejercicio Iteradores 2
+- Ejercicio Listas
+- Sparse_Matrix
 - Tarea Ordenamiento
-- Ejercicios Listas
-- Ejercicios Iteradores
+- Tarea Punteros
