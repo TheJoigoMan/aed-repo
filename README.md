@@ -6,9 +6,11 @@ Curso: Algoritmos y Estructura de datos
 - Btree
 - ChainHash
 - Ejercicio Forward-Doubly Lists
+- Ejercicio HashTable
 - Ejercicio Iteradores
 - Ejercicio Iteradores 2
 - Ejercicio Listas
+- Ejercicio Mediana
 - Sparse_Matrix
 - Tarea Ordenamiento
 - Tarea Punteros
