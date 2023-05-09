@@ -5,6 +5,7 @@ Curso: Algoritmos y Estructura de datos
 ## Subido hasta ahora:
 - Btree
 - ChainHash
+- Ejercicio AVL
 - Ejercicio Forward-Doubly Lists
 - Ejercicio HashTable
 - Ejercicio Iteradores
