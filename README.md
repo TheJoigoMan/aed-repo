@@ -12,6 +12,7 @@ Curso: Algoritmos y Estructura de datos
 - Ejercicio Iteradores 2
 - Ejercicio Listas
 - Ejercicio Mediana
+- Ejercicio String Match
 - Sparse_Matrix
 - Tarea Ordenamiento
 - Tarea Punteros
