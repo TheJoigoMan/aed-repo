@@ -6,6 +6,7 @@ Curso: Algoritmos y Estructura de datos
 - Btree
 - ChainHash
 - Ejercicio AVL
+- Ejercicio Floyd-Warshall
 - Ejercicio Forward-Doubly Lists
 - Ejercicio HashTable
 - Ejercicio Iteradores
